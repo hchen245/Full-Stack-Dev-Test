@@ -1,29 +1,81 @@
-# Field Estimate Tool
+# Full Stack HVAC Estimate Tool
 
-## The Problem
+## Overview
 
-Our HVAC technicians are losing time on every service call.
+This project is a full-stack HVAC estimate tool that simulates a real-world workflow used by contractors to generate, compare, and export job estimates.
 
-Right now, when a tech gets to a job site and needs to give the customer an estimate, here's what happens: they flip through a product binder or scroll through a spreadsheet on their phone, look up equipment costs, try to remember the labor rates for different job types, factor in the specifics of the property, and then scribble numbers on a notepad or punch them into a calculator. Sometimes they call the office to double-check pricing. Sometimes they guess and adjust later.
+Users can search for customers, select HVAC equipment, input job parameters, and generate multiple pricing options for comparison.
 
-The customer is standing there the whole time.
+The goal of this project is to demonstrate end-to-end full-stack development, including frontend UI design, backend API integration, and business logic implementation.
 
-A simple repair estimate might take 10-15 minutes. A full system replacement quote can take 30-45 minutes on-site, and that's before the tech has to go back to their truck to write it up in a way the customer can actually read. Some techs text a photo of their handwritten notes to the office and have someone there type it up. Others just wing it and send a "real" estimate later that evening.
+---
 
-We've got about 40 technicians in the field. If each one does 4-6 estimates a day, that's a lot of wasted time — and a lot of customers standing around waiting. We've heard from customers that the wait makes the whole experience feel less professional, and we've definitely lost jobs because a competitor got a clean estimate out faster.
+## What I Built
 
-## What We Have
+- A React-based frontend for selecting customers, equipment, and creating estimates
+- A backend API that serves customer, equipment, and labor rate data
+- A calculation engine that generates multiple estimate tiers (Good / Better / Best)
+- A comparison view to evaluate different pricing options side-by-side
+- PDF export functionality for generated estimates
 
-In the `data/` folder, you'll find some of the information our techs work with:
+---
 
-- **equipment.json** — Our catalog of HVAC equipment and parts with pricing
-- **labor_rates.json** — What we charge for different types of work
-- **customers.json** — A sample of customer and property records
+## DEMO
 
-This is real-ish data pulled from our systems. It's not perfect — some of it was exported from different tools at different times, so it might not all look the same.
 
-## What We're Asking
+https://github.com/user-attachments/assets/2c8a296f-bddd-4c44-b727-07a76bf8fdb2
 
-Build something that helps.
 
-Fork this repo, build your solution, and include a short write-up explaining your approach — what you built, why you made the choices you did, and what you'd do differently with more time.
+## Tech Stack
+
+- **Frontend:** React (Vite), TailwindCSS
+- **Backend:** Python (FastAPI / Flask-style API)
+- **Data Layer:** JSON-based mock datasets
+- **Tooling:** Axios, html2pdf, fuzzy search utilities
+
+---
+
+## Key Features
+
+### Estimate Generation
+- Dynamic pricing based on equipment and labor inputs
+- Multi-tier estimate generation (Good / Better / Best)
+
+### Customer & Equipment Selection
+- Searchable customer database
+- Equipment catalog browsing with filtering
+
+### Estimate Comparison
+- Side-by-side comparison of multiple estimate options
+- Clear breakdown of cost components
+
+### PDF Export
+- Export estimates as professional PDF documents (printable)
+
+---
+
+## Design Decisions
+
+- **React component-based architecture** was used to keep UI modular and reusable
+- **Backend API separation** ensures clear division between data and presentation logic
+- **JSON mock data** was used to simplify backend setup and focus on core functionality
+- **Simple calculation logic** was prioritized over over-engineering to keep business rules transparent
+
+---
+
+## Tradeoffs
+
+- Used JSON instead of a database to reduce complexity
+- No authentication system to focus on core estimation logic
+- Basic UI styling instead of heavy UI frameworks to prioritize functionality
+
+---
+
+## Future Improvements&Ideas
+
+- Add a real database (PostgreSQL or MongoDB)
+- Implement user authentication and saved quotes
+- Improve offline support with local persistence
+- Add backend deployment (cloud hosting)
+- Expand testing coverage for API and calculation logic
+- Improve UI polish and animations
