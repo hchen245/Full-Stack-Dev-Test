@@ -63,6 +63,18 @@ https://github.com/user-attachments/assets/2c8a296f-bddd-4c44-b727-07a76bf8fdb2
 
 ---
 
+### Progressive Web App (PWA) Support
+
+This application is also configured as a Progressive Web App (PWA), allowing users to install it directly onto their device for a more native-like experience.
+
+- Installable on desktop, tablet, and mobile devices
+- Can be added to home screen for quick access
+- Provides a full-screen app-like interface when installed
+- Service Worker enables basic offline support for previously loaded data and pages
+- Improves performance through caching of static assets
+
+---
+
 ## Tradeoffs
 
 - Used JSON instead of a database to reduce complexity
